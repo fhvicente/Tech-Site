@@ -3,4 +3,4 @@ This project was created during my university studies. It is a simple website th
 
 <h1> This is the website </h1>
 
-![SIMPLE SITE](https://github.com/fhvicente/Tech-Site/assets/134304084/558f4774-54b5-4b8c-8c8c-916e21ff73d8)
+![SIMPLE SITE](https://github.com/fhvicente/Tech-Site/assets/134304084/0527f4d1-6c26-4d03-b07c-2c9967825aa7)
