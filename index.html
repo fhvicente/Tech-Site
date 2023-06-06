@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+    <head>
+        <meta charset="UTF-8">
+        <title>Meu Site</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+
+    <script>
+        // Define o nome e valor do cookie
+        var cookieName = "utilizador";
+        var cookieValue = "fvicente";
+
+        // Define a data de expiração do cookie (opcional)
+        var expirationDate = new Date();
+        expirationDate.setFullYear(expirationDate.getFullYear() + 1); // Define a expiração para daqui a 1 ano
+
+        // Define o cookie no navegador
+        document.cookie = cookieName + "=" + cookieValue + "; expires=" + expirationDate.toUTCString();
+
+
+        // Faz uma requisição para o servidor, enviando o cookie armazenado no navegador
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "pagina.php", true);
+        xhr.setRequestHeader("Cookie", document.cookie);
+        xhr.send();
+    </script>
+      
+
+    <body onload="checkVisits(), setCookie(), getCookie()">
+        <!-- Navbar Section -->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="/" id="navbar__logo">FLÁVIO's TECH</a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="index.html" class="navbar__links">Home</a>
+                    </li>
+
+                    <li class="navbar__item">
+                        <a href="tech.html" class="navbar__links">Sobre</a>
+                    </li>
+                    <div class="navbar__menu">
+                        <div class="dropdown">
+                            <div class="select">
+                                <span class="selected">Produtos</span>
+                                <div class="caret">
+                            </div>
+                            <ul class="menu">
+                                <li><a href="https://www.google.com">API's</a></li>
+                                <li><a href="https://www.google.com">SOFTWARE</a></li>
+                                <li><a href="https://www.google.com">WEBSITES</a></li>
+                                <li><a href="tech.html">nova</a></li>
+                                <li class="active">Pordutos</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <li class="navbar__btn">
+                        <a href="https://www.google.com" class="button" onclick="addVisit()">Sign up</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- SLIDER -->
+        <div class="slider">
+            <div class="slides">
+                <!-- Radio buttons -->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <!-- Fim Radio buttons -->
+
+                <!-- Slides images -->
+                <div class="slide first">
+                    <a href="https://www.google.com"><img src="https://img.etimg.com/thumb/msid-88634316,width-1200,height-900,imgsize-65126,resizemode-8,quality-100/tech/technology/tracking-the-buzz-in-tech.jpg" alt="img1"></a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.google.com"></a><img src="https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70" alt="img2"></a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.google.com"></a><img src="https://imageio.forbes.com/specials-images/imageserve/61d52d4e3a76ed81ac034ea8/The-10-Tech-Trends-That-Will-Transform-Our-World/960x0.jpg?format=jpg&width=960" alt="img3"></a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.google.com"></a><img src="https://img.freepik.com/fotos-premium/fundo-de-tecnologia-abstrata-pontos-de-conexao-de-aperto-para-web-de-dados_494516-1505.jpg?w=2000" alt="img4"></a>
+                </div>
+                <!-- Fim slides -->
+
+                <!-- Navegation Auto -->
+                <div class="navegation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+
+            </div>
+
+        <div class="manual-navegation">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+
+
+        </div>
+
+        <!-- Hero Section -->
+        <div class="main">
+            <div class="main__container">
+                <div class="main__content">
+                    <h1>NOVA GERAÇÃO</h1>
+                    <h2>DE TECNOLOGIAS</h2>
+                    <p>VEJA O QUE SOMOS CAPAZES</p>
+                    <button class="main__btn"><a href="/">COMEÇAR</a></button>
+                </div>
+                <div class="main__img--conatiner">
+                    <img src="images/pic1.svg" alt="pic" id="main__img">
+                </div>
+            </div>
+        </div>
+
+        <div class="services">
+            <h1>
+                <div id="conteudo">Passe o RATO aqui para exibir o conteúdo do ficheiro.</div>
+                <script>
+                $(document).ready(function() {
+                    carregarTextoNoHTML('dados.txt', '#conteudo');
+                });
+                </script>
+            </h1>
+            <div class="services__container">
+                <div class="services__card">
+                    <h2>Expiricence</h2>
+                    <p>AI Power</p>
+                    <button>COMEÇAR</button>
+                </div>
+                <div class="services__card">
+                    <h2>Estás Pronto?</h2>
+                    <p>Lead the way</p>
+                    <button>COMEÇAR</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer__container">
+            <div class="footer__links">
+                <div class="footer__link--wrapper">
+                    <div class="footer__link--items">
+                        <h2>Sobre Nós</h2>
+                        <a href="https://www.google.com">Como isto funciona</a>
+                        <a href="https://www.google.com">Testemunhas</a>
+                        <a href="https://www.google.com">Carreira</a>
+                        <a href="https://www.google.com">Investimentos</a>
+                        <a href="https://www.google.com">Termos de Serviço</a>
+                    </div>
+                    <div class="footer__link--items">
+                        <h2>Contactos-nos</h2>
+                        <a href="https://www.google.com">Contactos</a>
+                        <a href="https://www.google.com">Suporte</a>
+                        <a href="https://www.google.com">Destinação</a>
+                        <a href="https://www.google.com">Investidores</a>
+                    </div>
+                </div>
+                <div class="footer__link--wrapper">
+                    <div class="footer__link--items">
+                        <h2>Vídeos</h2>
+                        <a href="https://www.google.com">Subscreva</a>
+                        <a href="https://www.google.com">Embaixadores</a>
+                        <a href="https://www.google.com">Agencia</a>
+                        <a href="https://www.google.com">Influencers</a>
+                    </div>
+                    <div class="footer__link--items">
+                        <h2>Social Media</h2>
+                        <a href="https://www.google.com">Instagram</a>
+                        <a href="https://www.google.com">Facebook</a>
+                        <a href="https://www.google.com">Youtube</a>
+                        <a href="https://www.google.com">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="social__media">
+                <div class="social__medi-wrap">
+                    <div class="footer__logo">
+                        <a href="https://www.google.com" id="footer__logo"><i class="fas fa-gem"></i>FLÁVIO</a>
+                    </div>
+                    <p class="website__rigths">FHSV 2023. All rights reserved</p>
+                    <div class="social__icons">
+                        <a href="/" class="social__icon--link" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="/" class="social__icon--link" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
